@@ -1,3 +1,20 @@
+# Yanglong Li's work:
+## Solved issues
+| Issue | Solved by |
+|-------|-----------|
+| Data persistence code coupled in Controller | Decoupled `DAO` codes from `Controller` to `Model`
+| Bad sql transaction process | Recognise code sequence to: <br/> 1, Update transaction firstly, then account <br/> 2, When transaction failed, rollback data <br/> 3, When both transaction and account update successfully, then commit
+| SQL Transaction hasn't Asynchronized | Asynchronized transaction data's persistence
+| Account's property isNew has not encapsulated | Encapsulated IsNew
+| DELETE a not existing data | Return `Data not found` when deleting a not existing Account
+
+## Issues need to solve
+| Issue | Solution |
+|-------|----------|
+| No exception catching | Need try/catch exception in Controller or Model section. Return message to View
+
+---
+
 # Refactoring Assessment
 
 This repository contains a terribly written Web API project. It's terrible on purpose, so you can show us how we can improve it.
